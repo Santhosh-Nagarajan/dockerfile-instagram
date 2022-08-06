@@ -1,12 +1,12 @@
-FROM centos:latest
+FROM httpd:latest
 
-RUN yum update
+WORKDIR /usr/local/apache2/html/index.html
 
-RUN yum install -y httpd
+copy . /usr/local/apache2/html/index.html
 
-COPY index.html /usr/share/html/index.html
+EXPOSE 80/tcp
 
-EXPOSE 80
+CMD ["bash"]
 
-CMD apachectl -D FOREGROUND
+
 
