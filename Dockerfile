@@ -1,12 +1,13 @@
 FROM httpd:latest
 
-WORKDIR /usr/local/apache2/html/index.html
+WORKDIR /app
 
-copy . /usr/local/apache2/html/index.html
+RUN rm /usr/local/apache2/htdocs/index.html
 
-EXPOSE 80/tcp
+COPY index.html /usr/local/apache2/htdocs
 
-CMD ["bash"]
+
+
 
 
 
