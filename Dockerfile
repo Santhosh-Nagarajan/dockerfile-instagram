@@ -1,13 +1,8 @@
-FROM httpd:latest
+FROM nginx:latest
 
 WORKDIR /app
 
-RUN rm /usr/local/apache2/htdocs/index.html
+RUN rm /usr/share/nginx/html/index.html
 
-COPY index.html /usr/local/apache2/htdocs
-
-
-
-
-
+COPY index.html /usr/share/nginx/html/
 
